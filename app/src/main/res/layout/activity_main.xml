@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/topRelative"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/text_color"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/appTitleText"
+            android:layout_width="wrap_content"
+            android:text="Mes fruits"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ubuntu_bold"
+            android:includeFontPadding="false"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:text="@string/welcome"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/ubuntu_bold"
+            android:includeFontPadding="false"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/topRelative"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/letStart"
+            android:layout_width="wrap_content"
+            android:text="@string/let_s_get_started"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/ubuntu_medium"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcomeText"/>
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/avocatCard"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        app:neumorph_shapeType="flat"
+        app:layout_constraintWidth_percent="0.5"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/letStart">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/avocat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avocat"
+                android:fontFamily="@font/ubuntu_light"
+                android:includeFontPadding="false"
+                android:textColor="@color/text_color"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/fraiseCard"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        app:layout_constraintWidth_percent="0.5"
+        app:neumorph_shapeType="basin"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/letStart">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/fraise"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fraise"
+                android:fontFamily="@font/ubuntu_light"
+                android:includeFontPadding="false"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/passionCard"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        app:layout_constraintWidth_percent="0.5"
+        android:layout_marginTop="10dp"
+        app:neumorph_shapeType="pressed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avocatCard">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/passion"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Passion"
+                android:fontFamily="@font/ubuntu_light"
+                android:includeFontPadding="false"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/poireCard"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        app:layout_constraintWidth_percent="0.5"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avocatCard">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/poire"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Poire"
+                android:fontFamily="@font/ubuntu_light"
+                android:includeFontPadding="false"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphButton
+        android:id="@+id/seeAllButton"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:textSize="25sp"
+        android:text="@string/voir_plus"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/ubuntu_bold"
+        android:includeFontPadding="false"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintTop_toBottomOf="@id/poireCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
