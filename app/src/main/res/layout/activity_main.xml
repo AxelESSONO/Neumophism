@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,63 +10,91 @@
     <RelativeLayout
         android:id="@+id/topRelative"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/text_color"
+        android:layout_height="70dp"
+        android:background="@color/background_color"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/appTitleText"
+        <soup.neumorphism.NeumorphTextView
             android:layout_width="wrap_content"
-            android:text="Mes fruits"
-            android:textStyle="bold"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="@color/white"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
             android:fontFamily="@font/ubuntu_bold"
             android:includeFontPadding="false"
-            tools:ignore="HardcodedText" />
+            android:text="Mes fruits"
+            android:textColor="@color/text_color"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:neumorph_shapeType="flat" />
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:neumorph_shapeType="basin">
+
+            <com.vimalcvs.switchdn.DayNightSwitch
+                android:id="@+id/switchItem"
+                android:layout_width="80dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </soup.neumorphism.NeumorphCardView>
 
     </RelativeLayout>
 
-        <TextView
-            android:id="@+id/welcomeText"
-            android:layout_width="wrap_content"
-            android:text="@string/welcome"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:textColor="@color/text_color"
-            android:fontFamily="@font/ubuntu_bold"
-            android:includeFontPadding="false"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/topRelative"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+    <View
+        android:id="@+id/viewTop"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@drawable/toolbar_bottom"
+        app:layout_constraintTop_toBottomOf="@id/topRelative" />
 
-        <TextView
-            android:id="@+id/letStart"
-            android:layout_width="wrap_content"
-            android:text="@string/let_s_get_started"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_gravity="center"
-            android:textColor="@color/text_color"
-            android:fontFamily="@font/ubuntu_medium"
-            android:includeFontPadding="false"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcomeText"/>
+    <soup.neumorphism.NeumorphTextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:includeFontPadding="false"
+        android:text="@string/welcome"
+        android:textColor="@color/text_color"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewTop"
+        app:neumorph_shapeType="flat" />
+
+    <TextView
+        android:id="@+id/letStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/ubuntu_medium"
+        android:includeFontPadding="false"
+        android:text="@string/let_s_get_started"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeText" />
 
     <soup.neumorphism.NeumorphCardView
         android:id="@+id/avocatCard"
         android:layout_width="0dp"
         android:layout_height="180dp"
-        app:neumorph_shapeType="flat"
-        app:layout_constraintWidth_percent="0.5"
         android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/letStart">
+        app:layout_constraintTop_toBottomOf="@id/letStart"
+        app:layout_constraintWidth_percent="0.5"
+        app:neumorph_shapeType="flat">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,14 +105,14 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/avocat" />
+                app:srcCompat="@drawable/avocat" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Avocat"
                 android:fontFamily="@font/ubuntu_light"
                 android:includeFontPadding="false"
+                android:text="@string/avocat"
                 android:textColor="@color/text_color"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -98,11 +125,11 @@
         android:id="@+id/fraiseCard"
         android:layout_width="0dp"
         android:layout_height="180dp"
-        app:layout_constraintWidth_percent="0.5"
-        app:neumorph_shapeType="basin"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/letStart">
+        app:layout_constraintTop_toBottomOf="@id/letStart"
+        app:layout_constraintWidth_percent="0.5"
+        app:neumorph_shapeType="basin">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -113,32 +140,31 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/fraise"/>
+                app:srcCompat="@drawable/fraise" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fraise"
                 android:fontFamily="@font/ubuntu_light"
                 android:includeFontPadding="false"
+                android:text="Fraise"
                 android:textColor="@color/text_color"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
     </soup.neumorphism.NeumorphCardView>
-
 
     <soup.neumorphism.NeumorphCardView
         android:id="@+id/passionCard"
         android:layout_width="0dp"
         android:layout_height="180dp"
-        app:layout_constraintWidth_percent="0.5"
         android:layout_marginTop="10dp"
-        app:neumorph_shapeType="pressed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/avocatCard">
+        app:layout_constraintTop_toBottomOf="@id/avocatCard"
+        app:layout_constraintWidth_percent="0.5"
+        app:neumorph_shapeType="pressed">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -149,31 +175,30 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/passion"/>
+                app:srcCompat="@drawable/passion" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Passion"
                 android:fontFamily="@font/ubuntu_light"
                 android:includeFontPadding="false"
+                android:text="Passion"
                 android:textColor="@color/text_color"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
     </soup.neumorphism.NeumorphCardView>
 
-
     <soup.neumorphism.NeumorphCardView
         android:id="@+id/poireCard"
         android:layout_width="0dp"
         android:layout_height="180dp"
-        app:layout_constraintWidth_percent="0.5"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/avocatCard">
+        app:layout_constraintTop_toBottomOf="@id/avocatCard"
+        app:layout_constraintWidth_percent="0.5">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -184,17 +209,17 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/poire"/>
+                app:srcCompat="@drawable/poire" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Poire"
                 android:fontFamily="@font/ubuntu_light"
                 android:includeFontPadding="false"
+                android:text="Poire"
                 android:textColor="@color/text_color"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -204,17 +229,17 @@
         android:id="@+id/seeAllButton"
         android:layout_width="0dp"
         android:layout_height="70dp"
-        android:textSize="25sp"
-        android:text="@string/voir_plus"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/text_color"
         android:fontFamily="@font/ubuntu_bold"
+        android:gravity="center"
         android:includeFontPadding="false"
-        app:layout_constraintWidth_percent="0.8"
-        app:layout_constraintTop_toBottomOf="@id/poireCard"
+        android:text="@string/voir_plus"
+        android:textColor="@color/text_color"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/poireCard"
+        app:layout_constraintWidth_percent="0.8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

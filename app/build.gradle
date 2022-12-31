@@ -29,6 +29,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    namespace 'com.axel.neumophism'
 }
 
 dependencies {
@@ -39,6 +40,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     implementation 'com.github.fornewid:neumorphism:0.3.2'
+    implementation 'com.github.vimalcvs:Day-Night-Switch:1.0.3'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'

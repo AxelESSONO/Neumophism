@@ -9,15 +9,18 @@
         <item name="colorSecondary">@color/background_color</item>
         <item name="colorSecondaryVariant">@color/background_color</item>
         <item name="colorOnSecondary">@color/black</item>
+
+        <item name="colorShadowDark">@color/neumorph_shadowColorDark</item>
+        <item name="colorShadowLight">@color/neumorph_shadowColorLight</item>
+
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/text_color</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/toolbar_color</item>
         <!-- Customize your theme here. -->
     </style>
 
     <style name="CustomShapeAppearance">
         <item name="neumorph_cornerFamily">rounded</item>
         <item name="neumorph_cornerSize">32dp</item>
-
         <!-- Or if wants different radii depending on the corner. -->
         <item name="neumorph_cornerSizeTopLeft">16dp</item>
         <item name="neumorph_cornerSizeTopRight">16dp</item>
